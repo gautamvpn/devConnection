@@ -27,4 +27,7 @@
 - Get the feed and add the feed in the store
 - Build the user card on feed
 - Build the user profile and edit profile section
+- show Toast Message on save of profile
 - Build the feed UI 
+- See all my connections
+
