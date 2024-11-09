@@ -20,7 +20,7 @@ const Body = () => {
        withCredentials:true,
       });
 
-      console.log(res.data)
+      // console.log(res.data)
 
       dispatch(addUser(res.data))
 
@@ -30,7 +30,7 @@ const Body = () => {
       {
         navigate("/login")
       }
-      console.log(err);
+      // console.log(err);
     }
   }
 

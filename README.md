@@ -26,4 +26,5 @@
 - Logout features
 - Get the feed and add the feed in the store
 - Build the user card on feed
-
+- Build the user profile and edit profile section
+- Build the feed UI 

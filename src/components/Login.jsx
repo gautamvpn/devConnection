@@ -8,8 +8,8 @@ import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
    
-  const[emailId,setEmailId] = useState("gautam@hgmail.com");
-  const[password,setPassword] = useState("Gautam@32874");
+  const[emailId,setEmailId] = useState("singh@gmail.com");
+  const[password,setPassword] = useState("Singh@32874");
   const[error,setError] = useState("")
   const dispatch = useDispatch()
   const navigate = useNavigate();
@@ -23,14 +23,14 @@ const Login = () => {
         password,
       },{withCredentials:true} )
 
-      console.log(res.data)
+      // console.log(res.data)
       dispatch(addUser(res.data))
       navigate("/");
     }
     catch(err)
     {
       setError(err?.response?.data || "something went wrong")
-      console.log(err)
+      // console.log(err)
     }
     
   }
