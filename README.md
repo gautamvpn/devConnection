@@ -29,5 +29,6 @@
 - Build the user profile and edit profile section
 - show Toast Message on save of profile
 - Build the feed UI 
-- See all my connections
+- New Page - See all my connections
+- New Page - See all my connection Requests
 
