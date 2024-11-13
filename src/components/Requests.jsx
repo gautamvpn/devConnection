@@ -61,7 +61,7 @@ const Requests = () => {
         const{_id,firstName,lastName,photoUrl,age,about,gender} = request.fromUserId;
       
         return(
-            <div className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto" key={_id}>
+            <div className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 mx-auto" key={_id}>
 
             <div><img src={photoUrl} className="w-20 h-20 rounded-lg " alt="photo" /></div>
             
