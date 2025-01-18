@@ -36,3 +36,49 @@
 
 
 
+*****************
+Deployment
+- Sign UP on AWS
+- Launch instance
+- chmod 400 <secretKey.pem>
+- ssh -i "DevConnections-secret.pem" ubuntu@ec2-13-49-240-45.eu-north-1.compute.amazonaws.com
+- Install Node version 
+- Git clone 'https.gitHub-repo'
+***** FrontEnd*****
+- npm install -> dependencies install
+- npm run build
+- sudo apt update
+- sudo apt install nginx
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+- Copy code from dist(build files) to /var/www/html (nginx server)
+- sudo scp -r dist/* /var/www/html/
+- Enable port 80
+- Now frontEnd deployed(working)
+
+************BackEnd*******
+- allowed ec2 instance public IP on mongodb server
+- installed pm2 -g
+- pm2 start npm -- start
+- pm2 logs
+- pm2 flush <name>, pm2 stop <name>, pm2 delete<name>, pm2 list
+- config nginx - /etc/nginx/sites-available/default
+- restart nginx - sudo systemctl restart nginx
+- Modify the BaseURL in frontEnd project to "/api"
+
+    nginx config : 
+
+    server_name 13.49.240.45;
+
+    location /api/ {
+        proxy_pass http://localhost:7777/;  # Pass the request to the Node.js app
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+
+
+
